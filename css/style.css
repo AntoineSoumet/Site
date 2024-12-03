@@ -55,11 +55,29 @@ p {
 }
 
 p2 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
-	font-weight: 500;
-	color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; /* Taille par défaut pour les écrans larges */
+    font-weight: 500;
+    color: #333;
+	text-align: justify;
 }
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    p2 {
+        font-size: 18px; /* Réduit légèrement la taille pour les écrans moyens */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    p2 {
+        font-size: 16px; /* Réduit davantage la taille pour les petits écrans */
+    }
+}
+
 p.intro {
 	margin: 12px 0 0;
 	line-height: 24px;
@@ -101,37 +119,89 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 .section-title {
 	margin-bottom: 50px;
 }
+/* Bouton personnalisé */
 .btn-custom {
-	font-family: 'Montserrat', sans-serif;
-	text-transform: uppercase;
-	color: #fff;
-	background-color: #444;
-	border: 2px solid #444;
-	padding: 14px 20px;
-	margin: 0;
-	font-size: 14px;
-	border-radius: 0;
-	margin-top: 20px;
-	margin-right: 30px;
-	transition: all 0.5s;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #444;
+    border: 2px solid #444;
+    padding: 14px 20px;
+    margin: 0;
+    font-size: 14px;
+    border-radius: 0;
+    margin-top: 20px;
+    margin-right: 30px;
+    transition: all 0.5s;
 }
-.btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
-	color: #eee;
-	background-color: #444;
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom.focus,
+.btn-custom:active,
+.btn-custom.active {
+    color: #eee;
+    background-color: #444;
 }
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    .btn-custom {
+        padding: 12px 18px; /* Réduit le padding */
+        font-size: 13px; /* Réduit légèrement la taille de la police */
+        margin-right: 20px; /* Réduit l'espacement entre les boutons */
+        margin-top: 15px; /* Réduit la marge supérieure */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    .btn-custom {
+        padding: 10px 15px; /* Réduit davantage le padding */
+        font-size: 12px; /* Ajuste la taille de la police pour les très petits écrans */
+        margin-right: 10px; /* Réduit encore l'espacement horizontal */
+        margin-top: 10px; /* Réduit la marge supérieure */
+        width: 100%; /* Les boutons prennent toute la largeur du conteneur */
+        text-align: center; /* Centre le texte */
+    }
+}
+
 /* Header Section */
 .intro {
-	display: block;
-	width: 100%;
-	padding: 0;
-	margin-bottom: 80px;
-	background: url(../img/Courbe5.png) no-repeat right bottom;
-	background-color: #fff;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 80px;
+    background: url(../img/Courbe5.png) no-repeat right bottom;
+    background-color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    .intro {
+        background-size: contain; /* Redimensionne l'image pour qu'elle soit entièrement visible */
+        background-position: center bottom; /* Replace l'image en haut au centre */
+        margin-bottom: 40px; /* Réduit la marge inférieure */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    .intro {
+        background-size: contain; /* Garde une taille adaptée à l'écran */
+        background-position: center bottom; /* Centrer l'image */
+        margin-bottom: 20px; /* Réduit encore la marge inférieure */
+    }
+}
+
 .intro .overlay {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,d5dade+100&0.5+0,0+100 */
 	background: -moz-linear-gradient(left, rgba(255,255,255,0.5) 0%, rgba(213,218,222,0) 100%); /* FF3.6-15 */
@@ -156,37 +226,122 @@ header .intro-text {
 }
 /* Portfolio Section */
 #portfolio {
-	padding: 40px 0 100px 0;
+    padding: 40px 0 100px 0;
 }
 
-
+/* Catégories */
 .categories {
-	margin-bottom: 80px;
+    margin-bottom: 80px;
 }
+
+/* Liste des catégories */
+ul.cat {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    justify-content: flex-start; /* Aligne les éléments à gauche */
+    gap: 15px; /* Augmente l’espacement entre les éléments */
+}
+
+/* Portfolio Section */
+#portfolio {
+    padding: 40px 0 100px 0;
+}
+
+/* Catégories */
+.categories {
+    margin-bottom: 80px;
+}
+
+/* Liste des catégories */
+ul.cat {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les éléments */
+    gap: 10px; /* Ajoute un espacement entre les éléments */
+}
+
+/* Boutons */
 ul.cat li {
-	display: inline-block;
+    display: inline-block;
 }
+
+/* Liste des types */
+ol.type {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les éléments */
+    gap: 15px; /* Ajoute un espacement entre les éléments */
+    margin-bottom: 20px; /* Espacement avec le contenu suivant */
+}
+
+/* Boutons individuels */
 ol.type li {
-	display: inline-block;
-	margin-right: 20px;
+    display: inline-block;
 }
+
+/* Style des liens */
 ol.type li a {
-	font-family: 'Montserrat', sans-serif;
-	color: #444;
-	font-size: 14px;
-	padding: 10px 20px;
-	border: 2px solid #444;
-	border-radius: 0;
-	text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: #444;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 2px solid #444;
+    border-radius: 0;
+    text-transform: uppercase;
+    white-space: nowrap; /* Empêche le texte de se couper */
 }
+
+/* Bouton actif */
 ol.type li a.active {
-	background: #444;
-	color: #eee;
+    background: #444;
+    color: #eee;
 }
+
+/* Effet hover */
 ol.type li a:hover {
-	background: #444;
-	color: #eee;
+    background: #444;
+    color: #eee;
 }
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    ul.cat {
+        gap: 8px; /* Réduit l'espacement entre les boutons */
+    }
+
+    ol.type {
+        gap: 10px; /* Réduit l'espacement entre les types */
+    }
+
+    ol.type li a {
+        font-size: 12px; /* Réduit la taille du texte */
+        padding: 8px 15px; /* Ajuste le padding des boutons */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    ul.cat {
+        flex-direction: column; /* Les catégories passent en colonne */
+        align-items: center; /* Centre les catégories */
+    }
+
+    ol.type {
+        flex-direction: column; /* Les types passent en colonne */
+        align-items: center; /* Centre les types */
+        gap: 8px; /* Réduit l'espacement entre les boutons */
+    }
+
+    ol.type li a {
+        font-size: 10px; /* Réduit encore plus la taille du texte */
+        padding: 6px 10px; /* Ajuste le padding des boutons */
+    }
+}
+
+
+
 .isotope-item {
 	z-index: 2
 }
@@ -254,13 +409,14 @@ ol.type li a:hover {
 .hover-bg:hover .hover-text {
 	opacity: 1;
 }
- /*bouton rond*/ 
+/* Bouton rond */
 .button-container {
     display: flex;
     gap: 250px; /* Espacement entre les boutons */
+    justify-content: center; /* Centre les boutons horizontalement */
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne si nécessaire */
 }
 
-/* Conteneur bouton + texte */
 .round-button-wrapper {
     display: flex;
     flex-direction: column; /* Empile le bouton et le texte */
@@ -272,7 +428,7 @@ ol.type li a:hover {
 .round-button {
     width: 150px;
     height: 150px;
-	border: 5px solid #333; /* Largeur, style et couleur du bord */
+    border: 5px solid #333; /* Largeur, style et couleur du bord */
     border-radius: 50%;
     background-color: #fff;
     display: flex;
@@ -295,114 +451,232 @@ ol.type li a:hover {
 
 /* Texte sous le bouton */
 .button-label {
-	margin : 8px;
-	padding : 0;
+    margin: 8px;
+    padding: 0;
     margin-top: 15px; /* Espacement entre le bouton et le texte */
     font-size: 14px; /* Taille du texte */
     color: #333;
 }
 
+/* Conteneur des boutons */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Ajustez cette valeur pour l'espacement entre les boutons */
+}
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    .button-container {
+        gap: 20px; /* Réduit l'espacement entre les boutons */
+        flex-direction: column; /* Empile les boutons verticalement */
+        align-items: center; /* Centre le contenu */
+    }
+
+    .round-button {
+        width: 100px; /* Réduit la taille des boutons */
+        height: 100px;
+    }
+
+    .button-label {
+        font-size: 12px; /* Réduit la taille du texte */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    .button-container {
+        gap: 10px; /* Réduit encore plus l'espacement */
+    }
+
+    .round-button {
+        width: 80px; /* Encore plus petit pour les écrans étroits */
+        height: 80px;
+    }
+
+    .button-label {
+        font-size: 10px; /* Ajuste la taille du texte */
+    }
+}
+
+
 /* Contact Section */
 #contact {
-	padding: 60px 0 60px 0;
-	background: #333;
+    padding: 60px 0 60px 0;
+    background: #333;
 }
+
 #contact h2 {
-	font-weight: 400;
-	color: #fff;
-	margin: 60px 0;
+    font-weight: 400;
+    color: #fff;
+    margin: 60px 0;
 }
+
 #contact img {
-	width: 140px;
-	margin: 5px 30px 10px 0;
+    width: 140px;
+    margin: 5px 30px 10px 0;
 }
+
 #contact p {
-	color: #fff;
-	margin-bottom: 20px;
-	line-height: 24px;
-	margin-left: 220px; /* Ajoute une marge à gauche */
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 24px;
+    margin-left: 220px; /* Marge à gauche pour les écrans larges */
 }
+
 #contact .social {
-	margin-top: 40px;
+    margin-top: 40px;
 }
+
 #contact .social ul li {
-	display: inline-block;
-	margin-right: 20px;
+    display: inline-block;
+    margin-right: 20px;
 }
+
 #contact .social i.fa {
-	font-size: 40px;
-	padding: 6px;
-	color: #777;
-	transition: all 0.3s;
+    font-size: 40px;
+    padding: 6px;
+    color: #777;
+    transition: all 0.3s;
 }
+
 #contact .social i.fa:hover {
-	color: #eee;
+    color: #eee;
 }
+
 #contact form {
-	padding: 0;
+    padding: 0;
 }
+
 #contact .text-danger {
-	color: #cc0033;
-	text-align: left;
+    color: #cc0033;
+    text-align: left;
 }
+
 label {
-	font-size: 12px;
-	font-weight: 400;
-	float: left;
+    font-size: 12px;
+    font-weight: 400;
+    float: left;
 }
+
 #contact .form-control {
-	display: block;
-	width: 100%;
-	padding: 6px 12px;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 1.42857143;
-	color: #aaa;
-	background-color: #444;
-	background-image: none;
-	border: 0;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition: none;
-	-o-transition: none;
-	transition: none;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #aaa;
+    background-color: #444;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
 }
+
 #contact .form-control:focus {
-	border-color: #999;
-	outline: 0;
-	-webkit-box-shadow: transparent;
-	box-shadow: transparent;
+    border-color: #999;
+    outline: 0;
+    -webkit-box-shadow: transparent;
+    box-shadow: transparent;
 }
+
 .form-control::-webkit-input-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control:-moz-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control::-moz-placeholder {
-color: #777;
+    color: #777;
 }
+
 .form-control:-ms-input-placeholder {
-color: #777;
+    color: #777;
 }
+
 #contact .btn-default {
-	font-weight: 400;
-	color: #666;
-	background-color: transparent;
-	border: 2px solid #666;
-	padding: 10px 20px;
-	margin: 0;
-	font-size: 15px;
-	border-radius: 0;
-	margin-top: 20px;
-	text-transform: uppercase;
-	transition: all 0.3s;
+    font-weight: 400;
+    color: #666;
+    background-color: transparent;
+    border: 2px solid #666;
+    padding: 10px 20px;
+    margin: 0;
+    font-size: 15px;
+    border-radius: 0;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: all 0.3s;
 }
-#contact .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
-	background-color: #666;
-	color: #999;
+
+#contact .btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active {
+    background-color: #666;
+    color: #999;
 }
+
+/* --- Styles Responsives --- */
+
+/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+@media (max-width: 768px) {
+    #contact {
+        display: flex;
+        flex-direction: column; /* Empile l'image et le texte */
+        align-items: center; /* Centre horizontalement les éléments */
+    }
+
+    #contact img {
+		width: 140px;
+		margin: 5px 30px 10px 0;
+	}
+	
+	/* --- Styles Responsives --- */
+	
+	/* Pour les écrans de moins de 768px (tablettes et téléphones) */
+	@media (max-width: 768px) {
+		#contact img {
+			width: 100px; /* Réduit la taille de l'image pour les tablettes et téléphones */
+		}
+	}
+	
+	/* Pour les écrans très étroits (moins de 480px) */
+	@media (max-width: 480px) {
+		#contact img {
+			width: 80px; /* Réduit encore davantage pour les petits écrans */
+		}
+	}
+	
+
+    #contact p {
+        margin-left: 0; /* Supprime la marge à gauche */
+        width: 90%; /* Le texte occupe presque toute la largeur */
+        text-align: justify; /* Justifie le texte */
+    }
+}
+
+/* Pour les écrans très étroits (moins de 480px) */
+@media (max-width: 480px) {
+    #contact img {
+        max-width: 250px; /* Réduit un peu la taille de l'image */
+    }
+
+    #contact p {
+        font-size: 14px; /* Réduit la taille de la police pour petits écrans */
+    }
+}
+
 /* Footer Section*/
 #footer {
 	background: #eee;
